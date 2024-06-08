@@ -20,9 +20,6 @@ challenges = {
 }
 
 # main page hard-code to display list of months
-
-
-
 def index1(request):
     string = ""
     months = list(challenges.keys())
@@ -37,8 +34,6 @@ def index1(request):
     return HttpResponse(response_data)
 
 # main page using Templates to display a HTML file
-
-
 def index2(request):
 
     return render(request, "challenges/main.htm")
@@ -54,8 +49,6 @@ def index3(request):
 
 # use to redirect the url from number to month
 # 5 => May
-
-
 def challenges_month_by_number(request, month):
 
     months = list(challenges.keys())
@@ -70,20 +63,12 @@ def challenges_month_by_number(request, month):
     return HttpResponseRedirect(redirect_path)
 
 # challenges.htm
-
-
 def challenges_month(request, month):
     try:
         challenge_text = challenges[month]
         month_text = month.capitalize()
-        # return HttpResponse("<h1>"+challenges[month]+"</h1>")
-        # return HttpResponse(render_to_string("challenges/challenges.htm"))
         return render(request, "challenges/challenge.htm", {"challenge_text": challenge_text, "month_text": month})
     except:
         response_data = render_to_string("404.html")
-        # # return HttpResponseNotFound("<h1>This is invalid month !!</h1>")
          
         return HttpResponseNotFound(response_data)
-        
-        
-        #raise Http404()
