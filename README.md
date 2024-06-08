@@ -65,3 +65,13 @@ from . import views
 urlpatterns = [
     path('<int:month>/', views.monthly_challenge, name='month-challenge'),
 ]
+
+ ```
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any questions or suggestions, feel free to open an issue or contact me directly at mohamed_salem_ali@outlook.com .
